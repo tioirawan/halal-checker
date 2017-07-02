@@ -17,7 +17,7 @@
 	</div>
 	
 	<div class="w3-container w3-center w3-margin" style="padding-top:52px">
-		<input id="query" type="search" class="w3-input w3-round" placeholder="Search here..."></input>
+		<input id="query" type="search" class="w3-input w3-round" placeholder="Search by name..."></input>
 		<p class="w3-small w3-left">*semua data diambil dari database MUI</p>
 		<div class="w3-container w3-blue"><button id="btn" class="w3-button w3-left w3-round w3-green" style="width:120px;"><i class="fa fa-search" ></i></button></div>
 		<div id="loading" class="w3-container w3-white w3-margin-top w3-round" style="width:50%;"><img style="width:20%;height;20%;" src="assets/loading.gif"></i></div>
@@ -41,9 +41,16 @@
 			$("#prev-page").hide();
 			$("#next-page").hide();
 			
+			$("#query").keyup(function(event){
+    			if(event.keyCode == 13){
+        			$("#btn").click();
+    			}
+			});
+			
 			$('#btn').click(function(){
 				$('#result').hide();
 				var query_value = $('#query').val();
+				query_value = query_value.replace(" ","+");
 				$.ajax({
 					type:"GET",
 					url:"api/index.php",
