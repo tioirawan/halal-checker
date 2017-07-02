@@ -43,6 +43,7 @@
 			
 			$("#query").keyup(function(event){
     			if(event.keyCode == 13){
+    				$('#query').blur();
         			$("#btn").click();
     			}
 			});
