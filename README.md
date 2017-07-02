@@ -1,6 +1,7 @@
 # halal-checker
 source code halal checker
 
+<<<<<<< HEAD
 This project show halal product form MUI(majelis ulama Indonesia) database
 
 This project use API to get data form MUI(majelis ulama Indonesia) database
