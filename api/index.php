@@ -63,7 +63,7 @@ function halal_produk_mui($menu, $query, $page) {
 	//###############################################################################################
 	
 	
-	/*######### Atau agan mau pake fungsi cURL ######################################################
+	/*######### fungsi cURL ######################################################
 	$chp = curl_init();
     curl_setopt($chp, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($chp, CURLOPT_URL, 'http://www.halalmui.org/mui14/index.php/main/produk_halal_detail/'.$menu.'/'.rawurlencode($query).'/Y/'.$page);
@@ -148,7 +148,7 @@ function halal_kategori_mui(){
 	//###############################################################################################
 	
 	
-	/*######### Atau agan mau pake fungsi cURL ######################################################
+	/*#########  fungsi cURL ######################################################
 	$chp = curl_init();
     curl_setopt($chp, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($chp, CURLOPT_URL, 'http://www.halalmui.org/mui14/index.php/main/produk_halal_masuk');

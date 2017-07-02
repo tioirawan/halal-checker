@@ -44,11 +44,16 @@
 			$("#query").keyup(function(event){
     			if(event.keyCode == 13){
     				$('#query').blur();
-        			$("#btn").click();
+        			$('#btn').click();
     			}
 			});
 			
 			$('#btn').click(function(){
+				page = 0;
+				update();
+			});
+
+			function update(){
 				$('#result').hide();
 				var query_value = $('#query').val();
 				query_value = query_value.replace(" ","+");
@@ -102,7 +107,7 @@
    					 $("#loading").hide();
    				 }   
 				});
-			});
+			}
 			
 			function show(data){
 				var prev_page = "";
@@ -122,13 +127,13 @@
 			$("#next-page").click(function(){
 				page += 10;
 				$('#result').html("");
-				$("#btn").click();
+				update();
 			});
 
 			$("#prev-page").click(function(){
 				page -= 10;
 				$('#result').html("");
-				$("#btn").click();
+				update();
 			});
 			
 			}catch(err){
