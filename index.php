@@ -17,6 +17,12 @@
 	</div>
 	
 	<div class="w3-container w3-center w3-margin" style="padding-top:52px">
+		<text class="w3-left">Metode Pencarian:</text>
+		<select id="search-by" class="w3-white w3-input w3-round w3-margin-bottom" required>
+			<option value="nama_produk">Nama Produk</option>
+			<option value="nama_produsen">Nama Produsen</option>
+			<option value="nomor_sertifikat">Nomor Sertifikat</option>
+		</select>
 		<input id="query" type="search" class="w3-input w3-round" placeholder="Search by name..."></input>
 		<p class="w3-small w3-left">*semua data diambil dari database MUI</p>
 		<div class="w3-container w3-blue"><button id="btn" class="w3-button w3-left w3-round w3-green" style="width:120px;"><i class="fa fa-search" ></i></button></div>
@@ -35,6 +41,7 @@
 			try{
 			var page = 0;
 			var decimalPage;
+			var pesan;
 			var temp;
 			$('#loading').hide();
 			$('#result').hide();
@@ -57,11 +64,12 @@
 				$('#result').hide();
 				var query_value = $('#query').val();
 				query_value = query_value.replace(" ","+");
+				var search_method = $('#search-by').val();
 				$.ajax({
 					type:"GET",
 					url:"api/index.php",
 					dataType:"JSON",
-					data:"menu=nama_produk&query="+query_value+"&page="+page,
+					data:"menu="+search_method+"&query="+query_value+"&page="+page,
 					beforeSend: function(){
 						$("#prev-page").hide();
 						$("#next-page").hide();
@@ -99,7 +107,8 @@
 							$("#next-page").hide();
 							$('#page').hide();
 							$('#result').show();
-							$('#result').html("Tidak dapat menemukan produk");
+							pesan = (data.pesan == undefined)? "": "<p>"+data.pesan+"</p>";
+							$('#result').html("<p>Tidak dapat menemukan produk</p>"+pesan);
 						}
 					},
 					error: function (xhr, ajaxOptions, thrownError){// Error Logger
