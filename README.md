@@ -1,7 +1,6 @@
 # halal-checker
 source code halal checker
 
-<<<<<<< HEAD
 This project show halal product form MUI(majelis ulama Indonesia) database
 
 This project use API to get data form MUI(majelis ulama Indonesia) database
@@ -14,6 +13,6 @@ lol idk i'm new to github
 
 ## Contact
 
-+[Facebook](http://www.facebook.com/rehan.syahputra.7792)
-+[Steam](http://www.steamcommunity.com/id/xnyhz)
-+[Stack overflow](http://www.stackoverflow.com/users/7343110/rehan-syahputra)
+*[Facebook](http://www.facebook.com/rehan.syahputra.7792)
+*[Steam](http://www.steamcommunity.com/id/xnyhz)
+*[Stack overflow](http://www.stackoverflow.com/users/7343110/rehan-syahputra)
